@@ -16,6 +16,15 @@ class OpenAPICodec(_OpenAPICodec):
             raise TypeError('Expected a `coreapi.Document` instance')
 
         data = generate_swagger_object(document)
+        if settings.SECURITY_DEFINITIONS:
+            security_key = settings.SECURITY_DEFINITIONS,keys()[0]
+            for k1 in data['paths']:
+                for k2 in data['paths'][k1]:
+                    data['paths'][k1][k2]['security'] = [
+                                                            {
+                                                                security_key: []
+                                                            }
+                                                        ]
         data.update(**options)
 
         return force_bytes(json.dumps(data))
