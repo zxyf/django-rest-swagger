@@ -5,5 +5,5 @@ global-exclude __pycache__
 global-exclude *.pyc
 global-exclude *.pyo
 
-graft rest_framework_swagger/static *
-graft rest_framework_swagger/templates *
+graft rest_framework_swagger/static
+graft rest_framework_swagger/templates
