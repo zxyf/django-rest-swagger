@@ -25,8 +25,6 @@ DEFAULTS = {
         'patch'
     ],
     'VALIDATOR_URL': '',
-    'ACCEPT_HEADER_VERSION': None,  # e.g. '1.0'
-    'CUSTOM_HEADERS': {}  # A dictionary of key/vals to override headers
 }
 
 IMPORT_STRINGS = []
